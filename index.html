@@ -509,6 +509,24 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
           Ao enviar, o WhatsApp abre com sua mensagem pronta. A gente responde e marca o horário.
         </p>
       </form>
+
+      <!-- confirmação visível: se o navegador bloquear o pop-up do WhatsApp,
+           a pessoa precisa ver que deu certo e ter um link pra clicar. -->
+      <div id="ok" hidden style="background:var(--bg);border:1px solid var(--accent);
+           border-radius:12px;padding:24px;text-align:center">
+        <div style="font-size:34px;line-height:1">✅</div>
+        <h3 style="font-size:19px;margin:12px 0 8px">Pronto, <span id="okNome">tudo certo</span>!</h3>
+        <p style="color:var(--ink-2);font-size:15px;margin-bottom:20px">
+          Seu pedido foi registrado. Agora é só mandar a mensagem pra gente
+          confirmar o horário da sua aula.
+        </p>
+        <a id="okLink" href="#" class="btn btn-block" style="background:var(--whats);color:#fff">
+          💬 Abrir o WhatsApp
+        </a>
+        <p style="color:var(--muted);font-size:13px;margin-top:14px">
+          Não abriu sozinho? Clique no botão acima.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -631,7 +649,8 @@ document.getElementById('form').addEventListener('submit', e => {
   const objetivo = document.getElementById('objetivo').value;
   const horario  = document.getElementById('horario').value;
 
-  // Evento de conversão — é ISSO que a Meta usa pra otimizar a campanha
+  // Evento de conversão — é ISSO que a Meta usa pra otimizar a campanha.
+  // Dispara ANTES de qualquer navegação, pra não correr risco de ser cancelado.
   track('Lead', { content_name: 'aula_experimental' });
 
   const msg =
@@ -642,7 +661,19 @@ document.getElementById('form').addEventListener('submit', e => {
     `*Melhor horário:* ${horario}\n\n` +
     `_(Vim pelo site — sei que fica nos fundos do Conexão Pilates)_`;
 
-  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
+  const link = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+
+  // Troca o formulário pela confirmação. Se o pop-up do WhatsApp for bloqueado,
+  // a pessoa ainda vê que deu certo e tem um botão pra clicar — antes ela ficava
+  // olhando pra uma tela que não reagia, e ia embora achando que quebrou.
+  document.getElementById('form').hidden = true;
+  document.getElementById('okNome').textContent = nome.split(' ')[0] || 'tudo certo';
+  document.getElementById('okLink').href = link;
+  document.getElementById('ok').hidden = false;
+  document.getElementById('ok').scrollIntoView({ block: 'center' });
+
+  // pequeno respiro pro evento do Pixel sair antes de abrir a outra aba
+  setTimeout(() => window.open(link, '_blank'), 300);
 });
 
 // Barra fixa e botão do WhatsApp levam direto pro WhatsApp no mobile se preferir:
