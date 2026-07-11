@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Station — Treino com personal, no máximo 2 alunos por horário | Maringá</title>
+<meta name="description" content="Em Maringá, um espaço de treino com personal trainer e no máximo 2 alunos por horário. Treino montado pro seu objetivo, sem fila e sem disputar aparelho. Agende sua aula experimental.">
+
+<!-- Open Graph: como o link aparece quando compartilhado no WhatsApp/Instagram -->
+<meta property="og:title" content="Treino com personal. No máximo 2 alunos por horário.">
+<meta property="og:description" content="Não é academia lotada. É treino pro seu objetivo, em Maringá. Agende sua aula experimental.">
+<meta property="og:type" content="website">
+
+<!-- =========================================================================
+     >>> PREENCHER ANTES DE PUBLICAR <<<
+     1. WhatsApp e Meta Pixel: veja o bloco CONFIG no <script> lá embaixo.
+     2. Fotos: troque os blocos .foto-placeholder por <img> reais.
+     ========================================================================= -->
+
+<!-- META PIXEL — cole o ID no CONFIG abaixo. Sem isso o anúncio não otimiza. -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+</script>
+
+<style>
+  :root {
+    --bg:        #0f0f0f;
+    --bg-2:      #171716;
+    --bg-3:      #1f1f1e;
+    --ink:       #ffffff;
+    --ink-2:     #b8b7b0;
+    --muted:     #78776f;
+    --line:      #2c2c2a;
+    --accent:    #c4f82a;
+    --accent-d:  #a8d81f;
+    --whats:     #25d366;
+    --danger:    #e06666;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 76px; /* espaço pra barra fixa do WhatsApp no mobile */
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+  section { padding: 76px 0; }
+  h1, h2, h3 { line-height: 1.15; letter-spacing: -0.025em; font-weight: 700; }
+  .eyebrow {
+    color: var(--accent); font-size: 13px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .12em; margin-bottom: 14px;
+  }
+  .lead { color: var(--ink-2); font-size: 19px; }
+
+  /* ---------- botões ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    background: var(--accent); color: #0f0f0f; font-weight: 750; font-size: 17px;
+    padding: 17px 30px; border-radius: 10px; border: none; cursor: pointer;
+    text-decoration: none; transition: transform .12s, background .12s;
+    font-family: inherit; text-align: center;
+  }
+  .btn:hover { background: #d4ff4d; transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn-out {
+    background: transparent; color: var(--ink); border: 1px solid var(--line);
+  }
+  .btn-out:hover { background: var(--bg-3); border-color: var(--muted); }
+  .btn-block { width: 100%; }
+
+  /* ---------- nav ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(15,15,15,.88); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; height: 66px; gap: 18px; }
+  .logo { font-weight: 800; font-size: 19px; letter-spacing: -0.02em; }
+  .logo b { color: var(--accent); }
+  nav .sp { flex: 1; }
+  nav .btn { padding: 10px 20px; font-size: 15px; }
+  nav a.link { color: var(--ink-2); text-decoration: none; font-size: 15px; font-weight: 500; }
+  nav a.link:hover { color: var(--ink); }
+  @media (max-width: 760px) { nav a.link { display: none; } }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 84px 0 72px; border-bottom: 1px solid var(--line); }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
+  .hero h1 { font-size: clamp(34px, 5.4vw, 56px); margin-bottom: 22px; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero .lead { margin-bottom: 30px; max-width: 30em; }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
+  .hero-trust { display: flex; gap: 22px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
+  .hero-trust span { display: flex; align-items: center; gap: 6px; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+  .foto-placeholder {
+    background: var(--bg-2); border: 1px dashed var(--line); border-radius: 14px;
+    aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center;
+    text-align: center; color: var(--muted); font-size: 14px; padding: 26px;
+  }
+
+  /* ---------- números ---------- */
+  .stats { background: var(--bg-2); border-bottom: 1px solid var(--line); padding: 44px 0; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 34px; }
+  .stat .n { font-size: 42px; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; line-height: 1; }
+  .stat .t { color: var(--ink-2); font-size: 15px; margin-top: 9px; }
+
+  /* ---------- comparação ---------- */
+  .cmp { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin-top: 38px; }
+  .cmp-row { display: grid; grid-template-columns: 1fr 1fr; }
+  .cmp-row > div { padding: 18px 22px; border-bottom: 1px solid var(--line); font-size: 16px; }
+  .cmp-row:last-child > div { border-bottom: none; }
+  .cmp-row > div:first-child { border-right: 1px solid var(--line); color: var(--ink-2); }
+  .cmp-head > div { background: var(--bg-2); font-weight: 700; font-size: 14px;
+    text-transform: uppercase; letter-spacing: .06em; color: var(--muted) !important; }
+  .cmp-head > div:last-child { color: var(--accent) !important; }
+  .cmp .yes::before { content: "✓ "; color: var(--accent); font-weight: 800; }
+  .cmp .no::before  { content: "✕ "; color: var(--danger); font-weight: 800; }
+  @media (max-width: 700px) { .cmp-row > div { font-size: 15px; padding: 14px 16px; } }
+
+  /* ---------- horários ---------- */
+  .day { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .day-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+  @media (max-width: 900px) { .day-grid { grid-template-columns: 1fr; gap: 32px; } }
+  .slots { display: grid; gap: 10px; }
+  .slot {
+    display: flex; align-items: center; gap: 14px; padding: 14px 18px;
+    background: var(--bg-3); border: 1px solid var(--line); border-radius: 10px;
+  }
+  .slot .h { font-weight: 700; font-variant-numeric: tabular-nums; min-width: 118px; }
+  .slot .d { color: var(--ink-2); font-size: 15px; flex: 1; }
+  .slot.livre { border-color: var(--accent); background: rgba(196,248,42,.07); }
+  .slot.livre .tag { color: var(--accent); font-weight: 700; font-size: 13px; }
+  .slot .tag { color: var(--muted); font-size: 13px; }
+
+  /* ---------- para quem ---------- */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 38px; }
+  .card {
+    background: var(--bg-2); border: 1px solid var(--line); border-radius: 14px; padding: 26px;
+  }
+  .card .ic { font-size: 26px; margin-bottom: 12px; }
+  .card h3 { font-size: 17px; margin-bottom: 8px; }
+  .card p { color: var(--ink-2); font-size: 15px; }
+
+  /* ---------- passos ---------- */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; counter-reset: s; }
+  .step { counter-increment: s; }
+  .step::before {
+    content: counter(s); display: flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border-radius: 50%; background: var(--accent);
+    color: #0f0f0f; font-weight: 800; font-size: 19px; margin-bottom: 16px;
+  }
+  .step h3 { font-size: 18px; margin-bottom: 7px; }
+  .step p { color: var(--ink-2); font-size: 15px; }
+  @media (max-width: 800px) { .steps { grid-template-columns: 1fr; gap: 26px; } }
+
+  /* ---------- formulário ---------- */
+  .form-sec { background: var(--bg-2); border-top: 1px solid var(--line); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  @media (max-width: 900px) { .form-grid { grid-template-columns: 1fr; gap: 36px; } }
+  form { display: grid; gap: 16px; }
+  .field { display: grid; gap: 7px; }
+  .field label { font-size: 14px; font-weight: 600; color: var(--ink-2); }
+  input, select {
+    font: inherit; font-size: 16px; color: var(--ink); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 10px; padding: 14px 15px; width: 100%;
+  }
+  input::placeholder { color: var(--muted); }
+  input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: var(--accent); }
+  .form-note { color: var(--muted); font-size: 13px; text-align: center; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 520px) { .two-col { grid-template-columns: 1fr; } }
+
+  .info-list { display: grid; gap: 20px; }
+  .info-item { display: flex; gap: 14px; }
+  .info-item .ic { font-size: 20px; flex: none; }
+  .info-item h3 { font-size: 16px; margin-bottom: 3px; }
+  .info-item p, .info-item a { color: var(--ink-2); font-size: 15px; }
+  .info-item a { color: var(--accent); text-decoration: none; }
+  .info-item a:hover { text-decoration: underline; }
+
+  /* ---------- FAQ ---------- */
+  details {
+    border-bottom: 1px solid var(--line); padding: 20px 0;
+  }
+  details summary {
+    cursor: pointer; font-weight: 650; font-size: 17px; list-style: none;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after { content: "+"; color: var(--accent); font-size: 24px; font-weight: 400; flex: none; }
+  details[open] summary::after { content: "−"; }
+  details p { color: var(--ink-2); margin-top: 12px; font-size: 16px; }
+
+  /* ---------- CTA final + rodapé ---------- */
+  .final { text-align: center; border-top: 1px solid var(--line); }
+  .final h2 { font-size: clamp(28px, 4.4vw, 42px); margin-bottom: 18px; }
+  .final .lead { margin: 0 auto 30px; max-width: 34em; }
+
+  footer {
+    border-top: 1px solid var(--line); padding: 34px 0;
+    color: var(--muted); font-size: 14px;
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  footer a { color: var(--ink-2); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  /* ---------- barra fixa mobile ---------- */
+  .sticky-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    background: rgba(15,15,15,.94); backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line); padding: 12px 16px;
+  }
+  .sticky-bar .btn { width: 100%; background: var(--whats); color: #fff; }
+  .sticky-bar .btn:hover { background: #2ee06f; }
+  @media (min-width: 901px) { .sticky-bar { display: none; } body { padding-bottom: 0; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Personal<b>Station</b></div>
+    <span class="sp"></span>
+    <a href="#diferenca" class="link">A diferença</a>
+    <a href="#horarios" class="link">Horários</a>
+    <a href="#faq" class="link">Dúvidas</a>
+    <a href="#agendar" class="btn" data-cta="nav">Aula experimental</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Maringá &middot; Zona 04</div>
+      <h1>Treino com personal.<br>No máximo <em>2 alunos</em> por horário.</h1>
+      <p class="lead">
+        Aqui ninguém disputa aparelho, ninguém treina com ficha genérica e ninguém
+        fica perdido no meio de trinta pessoas. Seu treino é montado pro seu objetivo
+        e alguém olha pra você o tempo inteiro.
+      </p>
+      <div class="hero-cta">
+        <a href="#agendar" class="btn" data-cta="hero">Agendar aula experimental</a>
+        <a href="#diferenca" class="btn btn-out">Ver como funciona</a>
+      </div>
+      <div class="hero-trust">
+        <span>✓ Aula experimental sem compromisso</span>
+        <span>✓ Rua Joaquim Nabuco, 841</span>
+      </div>
+    </div>
+    <div class="foto-placeholder">
+      📸 <strong style="display:block;margin:8px 0">Foto principal</strong>
+      Personal orientando 1 ou 2 alunos no espaço, com o ambiente vazio ao redor.
+      É essa imagem que prova a promessa do título.<br>(vertical, 4:5)
+    </div>
+  </div>
+</header>
+
+<!-- ================= NÚMEROS ================= -->
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="n">2</div><div class="t">alunos por personal, no máximo</div></div>
+    <div class="stat"><div class="n">100%</div><div class="t">do treino montado pro seu objetivo</div></div>
+    <div class="stat"><div class="n">06&ndash;20h</div><div class="t">de segunda a sexta</div></div>
+    <div class="stat"><div class="n">0</div><div class="t">fila pra usar aparelho</div></div>
+  </div>
+</div>
+
+<!-- ================= A DIFERENÇA ================= -->
+<section id="diferenca">
+  <div class="wrap">
+    <div class="eyebrow">A diferença</div>
+    <h2 style="font-size:clamp(27px,4vw,38px);max-width:16em">
+      A gente não é uma academia pequena. A gente é o oposto de uma academia.
+    </h2>
+    <p class="lead" style="margin-top:16px;max-width:38em">
+      Academia grande vende plano e torce pra você não aparecer. O modelo depende disso.
+      Aqui o modelo é o contrário: o espaço só funciona se você vier, treinar certo e ter resultado.
+    </p>
+
+    <div class="cmp">
+      <div class="cmp-row cmp-head">
+        <div>Academia comum</div>
+        <div>Personal Station</div>
+      </div>
+      <div class="cmp-row">
+        <div class="no">Dezenas de pessoas no mesmo horário</div>
+        <div class="yes">No máximo 2 alunos por personal</div>
+      </div>
+      <div class="cmp-row">
+        <div class="no">Ficha de treino padrão, igual pra todo mundo</div>
+        <div class="yes">Treino montado a partir do <em>seu</em> objetivo</div>
+      </div>
+      <div class="cmp-row">
+        <div class="no">Fila pra usar o aparelho no horário de pico</div>
+        <div class="yes">O equipamento está livre quando você precisa</div>
+      </div>
+      <div class="cmp-row">
+        <div class="no">Ninguém corrige sua execução</div>
+        <div class="yes">Correção o tempo todo &mdash; é pra isso que o personal está ali</div>
+      </div>
+      <div class="cmp-row">
+        <div class="no">Você desiste em março e continua pagando</div>
+        <div class="yes">Alguém percebe quando você some &mdash; e te cobra</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HORÁRIOS ================= -->
+<section id="horarios" class="day">
+  <div class="wrap day-grid">
+    <div>
+      <div class="eyebrow">Horários</div>
+      <h2 style="font-size:clamp(26px,3.6vw,36px)">
+        Se sua agenda é flexível, o melhor horário é o que ninguém quer.
+      </h2>
+      <p class="lead" style="margin-top:16px">
+        Entre 9h e 17h30 o espaço fica praticamente só seu. É o horário de quem
+        trabalha por conta, faz home office, já se aposentou, tem os filhos na
+        escola ou está voltando a treinar depois de uma lesão e não quer plateia.
+      </p>
+      <p class="lead" style="margin-top:14px">
+        Mesma estrutura, mesmo personal, mesmo treino &mdash; com o lugar vazio ao redor.
+      </p>
+      <a href="#agendar" class="btn" style="margin-top:26px" data-cta="horarios">Quero treinar nesse horário</a>
+    </div>
+    <div class="slots">
+      <div class="slot">
+        <span class="h">06:00 &ndash; 09:00</span>
+        <span class="d">Antes do trabalho</span>
+        <span class="tag">poucas vagas</span>
+      </div>
+      <div class="slot livre">
+        <span class="h">09:00 &ndash; 13:00</span>
+        <span class="d">Manhã tranquila</span>
+        <span class="tag">vagas abertas</span>
+      </div>
+      <div class="slot livre">
+        <span class="h">13:00 &ndash; 17:30</span>
+        <span class="d">Tarde tranquila</span>
+        <span class="tag">vagas abertas</span>
+      </div>
+      <div class="slot">
+        <span class="h">17:30 &ndash; 20:00</span>
+        <span class="d">Depois do trabalho</span>
+        <span class="tag">poucas vagas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRA QUEM ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Pra quem é</div>
+    <h2 style="font-size:clamp(26px,3.6vw,36px);max-width:18em">
+      Quem chega aqui geralmente já tentou academia comum &mdash; e não deu certo.
+    </h2>
+    <div class="cards">
+      <div class="card">
+        <div class="ic">🎯</div>
+        <h3>Quem tem um objetivo específico</h3>
+        <p>Emagrecer, ganhar massa, corrigir postura, voltar a ter disposição. Objetivo diferente pede treino diferente, não ficha de balcão.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🩺</div>
+        <h3>Quem está voltando de lesão</h3>
+        <p>Quem saiu da fisioterapia e precisa de alguém olhando cada movimento — não de um salão cheio onde ninguém repara em você.</p>
+      </div>
+      <div class="card">
+        <div class="ic">😶‍🌫️</div>
+        <h3>Quem tem vergonha de academia cheia</h3>
+        <p>Se a plateia te trava, esse é o ponto. Com dois alunos por horário, não tem plateia.</p>
+      </div>
+      <div class="card">
+        <div class="ic">⏱️</div>
+        <h3>Quem tem pouco tempo</h3>
+        <p>Sem fila e com treino pronto na sua chegada, uma hora aqui rende o que duas rendem numa academia lotada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="eyebrow">Como funciona</div>
+    <h2 style="font-size:clamp(26px,3.6vw,36px)">Da primeira mensagem ao primeiro treino</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Você agenda a experimental</h3>
+        <p>Preenche o formulário aqui embaixo, a gente te chama no WhatsApp e marca no horário que der pra você.</p>
+      </div>
+      <div class="step">
+        <h3>A gente conversa sobre o seu objetivo</h3>
+        <p>Antes de treinar, entender: o que você quer, o que já tentou, o que dói, quanto tempo você tem.</p>
+      </div>
+      <div class="step">
+        <h3>Você treina</h3>
+        <p>Um treino de verdade, com personal do lado, no espaço real. Aí você decide se faz sentido continuar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORMULÁRIO ================= -->
+<section id="agendar" class="form-sec">
+  <div class="wrap form-grid">
+    <div>
+      <div class="eyebrow">Aula experimental</div>
+      <h2 style="font-size:clamp(27px,4vw,38px)">Venha treinar uma vez antes de decidir qualquer coisa.</h2>
+      <p class="lead" style="margin:16px 0 34px">
+        Sem compromisso e sem enrolação. Você conhece o espaço, treina de verdade
+        com um personal e sente na prática a diferença de não dividir a academia
+        com mais ninguém.
+      </p>
+
+      <div class="info-list">
+        <div class="info-item">
+          <span class="ic">📍</span>
+          <div>
+            <h3>Onde fica</h3>
+            <p>Rua Joaquim Nabuco, 841 &mdash; Maringá, PR</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Joaquim+Nabuco+841+Maringa+PR" target="_blank" rel="noopener">Abrir no Google Maps →</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="ic">🕗</span>
+          <div>
+            <h3>Funcionamento</h3>
+            <p>Segunda a sexta, das 06:00 às 20:00</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="ic">📱</span>
+          <div>
+            <h3>Instagram</h3>
+            <a href="https://instagram.com/personalstation" target="_blank" rel="noopener">@personalstation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <form id="form">
+        <div class="field">
+          <label for="nome">Seu nome</label>
+          <input id="nome" name="nome" required placeholder="Como podemos te chamar?">
+        </div>
+        <div class="field">
+          <label for="fone">WhatsApp</label>
+          <input id="fone" name="fone" type="tel" required inputmode="tel" placeholder="(44) 9 9999-9999">
+        </div>
+        <div class="two-col">
+          <div class="field">
+            <label for="objetivo">Seu objetivo</label>
+            <select id="objetivo" name="objetivo">
+              <option>Emagrecer</option>
+              <option>Ganhar massa muscular</option>
+              <option>Voltar a treinar depois de parar</option>
+              <option>Recuperação de lesão</option>
+              <option>Saúde e disposição</option>
+              <option>Outro / ainda não sei</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="horario">Melhor horário</label>
+            <select id="horario" name="horario">
+              <option>Manhã (09h–13h) — mais vagas</option>
+              <option>Tarde (13h–17h30) — mais vagas</option>
+              <option>Cedo (06h–09h)</option>
+              <option>Fim de tarde (17h30–20h)</option>
+              <option>Tenho flexibilidade</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-block" style="margin-top:6px">
+          Agendar minha aula experimental
+        </button>
+        <p class="form-note">
+          Ao enviar, o WhatsApp abre com sua mensagem pronta. A gente responde e marca o horário.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap" style="max-width:760px">
+    <div class="eyebrow">Dúvidas</div>
+    <h2 style="font-size:clamp(26px,3.6vw,36px);margin-bottom:24px">Perguntas que todo mundo faz</h2>
+
+    <!-- O preço está aqui DE PROPÓSITO: filtra quem não tem perfil e economiza
+         seu tempo de atendimento e seu dinheiro de anúncio. -->
+    <details open>
+      <summary>Quanto custa?</summary>
+      <p>
+        Depende de quantas vezes por semana você treina. O plano de entrada é 2x por semana,
+        a partir de <strong>R$ 520/mês</strong> no pacote anual (R$ 670 no mensal). Treinando
+        5x por semana, vai até R$ 1.320/mês. Também existe aula avulsa por R$ 150.
+      </p>
+      <p>
+        Não é preço de academia de R$ 99 — e é exatamente por isso que você treina com no
+        máximo mais uma pessoa na sala, com alguém corrigindo cada movimento. Na aula
+        experimental a gente mostra a tabela inteira, sem letra miúda.
+      </p>
+    </details>
+    <details>
+      <summary>Preciso já saber treinar?</summary>
+      <p>Não. Boa parte de quem chega aqui está começando do zero ou voltando depois de anos parado — é justamente pra isso que existe alguém do seu lado o treino inteiro.</p>
+    </details>
+    <details>
+      <summary>Como assim "no máximo 2 alunos por horário"?</summary>
+      <p>Cada personal atende no máximo dois alunos ao mesmo tempo. Não é aula em grupo e não é academia com 40 pessoas: é atenção de verdade, com treinos diferentes rodando lado a lado.</p>
+    </details>
+    <details>
+      <summary>Posso escolher meu personal?</summary>
+      <p>Pode. Trabalham aqui personais diferentes, com perfis e valores diferentes. Na experimental a gente entende seu objetivo e indica quem combina mais com você.</p>
+    </details>
+    <details>
+      <summary>A aula experimental é paga?</summary>
+      <p>Não. É pra você conhecer o espaço, treinar de verdade e decidir com informação — não com promessa.</p>
+    </details>
+    <details>
+      <summary>Tem vaga no meu horário?</summary>
+      <p>Entre 9h e 17h30 quase sempre tem. Cedo (06h–09h) e no fim de tarde (17h30–20h) as vagas são mais disputadas — se seu horário é esse, chama logo pra gente ver o que ainda está aberto.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
+<section class="final">
+  <div class="wrap">
+    <h2>Uma aula. É o que você precisa pra sentir a diferença.</h2>
+    <p class="lead">
+      Sem plano, sem fidelidade, sem compromisso. Você treina, sente como é
+      ter uma academia inteira à sua disposição, e aí decide.
+    </p>
+    <a href="#agendar" class="btn" data-cta="final">Agendar aula experimental</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;width:100%">
+    <div>Personal Station &mdash; Rua Joaquim Nabuco, 841, Maringá/PR</div>
+    <div><a href="https://instagram.com/personalstation" target="_blank" rel="noopener">@personalstation</a></div>
+  </div>
+</footer>
+
+<div class="sticky-bar">
+  <a href="#agendar" class="btn" data-cta="sticky">💬 Agendar aula experimental</a>
+</div>
+
+<script>
+/* =============================================================
+   CONFIG — >>> PREENCHA ESTES DOIS CAMPOS ANTES DE PUBLICAR <<<
+   ============================================================= */
+const CONFIG = {
+  // Número do WhatsApp com código do país e DDD, só dígitos.
+  // Ex.: Maringá (44) 99999-9999  ->  '5544999999999'
+  whatsapp: '5544988044090',
+
+  // ID do Meta Pixel (Gerenciador de Eventos > Fontes de dados).
+  // Sem isso, a Meta não sabe quem virou lead e NÃO CONSEGUE otimizar o anúncio.
+  pixelId: ''
+};
+/* ============================================================= */
+
+// Inicializa o Pixel só se o ID estiver preenchido
+if (CONFIG.pixelId && window.fbq) {
+  fbq('init', CONFIG.pixelId);
+  fbq('track', 'PageView');
+}
+const track = (evento, dados) => { if (CONFIG.pixelId && window.fbq) fbq('track', evento, dados); };
+
+// Cliques nos CTAs = sinal de interesse (ajuda a Meta a achar gente parecida)
+document.querySelectorAll('[data-cta]').forEach(el => {
+  el.addEventListener('click', () => track('ViewContent', { content_name: el.dataset.cta }));
+});
+
+/* O formulário não tem servidor: ele monta a mensagem e abre o WhatsApp.
+   Zero backend, zero custo, e o lead cai direto onde você já atende. */
+document.getElementById('form').addEventListener('submit', e => {
+  e.preventDefault();
+
+  if (CONFIG.whatsapp === '5544000000000') {
+    alert('⚠️ Configure o número do WhatsApp no bloco CONFIG antes de publicar a página.');
+    return;
+  }
+
+  const nome     = document.getElementById('nome').value.trim();
+  const fone     = document.getElementById('fone').value.trim();
+  const objetivo = document.getElementById('objetivo').value;
+  const horario  = document.getElementById('horario').value;
+
+  // Evento de conversão — é ISSO que a Meta usa pra otimizar a campanha
+  track('Lead', { content_name: 'aula_experimental' });
+
+  const msg =
+    `Olá! Quero agendar uma aula experimental na Personal Station.\n\n` +
+    `*Nome:* ${nome}\n` +
+    `*WhatsApp:* ${fone}\n` +
+    `*Objetivo:* ${objetivo}\n` +
+    `*Melhor horário:* ${horario}`;
+
+  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
+});
+
+// Barra fixa e botão do WhatsApp levam direto pro WhatsApp no mobile se preferir:
+// basta trocar o href de [data-cta="sticky"] por https://wa.me/<numero>
+</script>
+</body>
+</html>
