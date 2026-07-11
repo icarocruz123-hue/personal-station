@@ -99,11 +99,14 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
   .hero-trust span { display: flex; align-items: center; gap: 6px; }
   @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 36px; } }
 
-  .foto-placeholder {
-    background: var(--bg-2); border: 1px dashed var(--line); border-radius: 14px;
-    aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center;
-    text-align: center; color: var(--muted); font-size: 14px; padding: 26px;
+  .foto {
+    width: 100%; height: auto; display: block;
+    border-radius: 14px; border: 1px solid var(--line);
+    object-fit: cover; aspect-ratio: 4/5;
   }
+  /* imagem lado a lado com texto */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+  @media (max-width: 900px) { .split { grid-template-columns: 1fr; gap: 34px; } }
 
   /* ---------- números ---------- */
   .stats { background: var(--bg-2); border-bottom: 1px solid var(--line); padding: 44px 0; }
@@ -255,11 +258,7 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
         <span>✓ Rua Joaquim Nabuco, 841</span>
       </div>
     </div>
-    <div class="foto-placeholder">
-      📸 <strong style="display:block;margin:8px 0">Foto principal</strong>
-      Personal orientando 1 ou 2 alunos no espaço, com o ambiente vazio ao redor.
-      É essa imagem que prova a promessa do título.<br>(vertical, 4:5)
-    </div>
+    <img src="img/hero.jpg" alt="Personal trainer supervisionando aluna no leg press na Personal Station, com o salão vazio ao redor" class="foto" width="1000" height="1250" fetchpriority="high">
   </div>
 </header>
 
@@ -276,16 +275,25 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 <!-- ================= A DIFERENÇA ================= -->
 <section id="diferenca">
   <div class="wrap">
-    <div class="eyebrow">A diferença</div>
-    <h2 style="font-size:clamp(27px,4vw,38px);max-width:16em">
-      A gente não é uma academia pequena. A gente é o oposto de uma academia.
-    </h2>
-    <p class="lead" style="margin-top:16px;max-width:38em">
-      Academia grande vende plano e torce pra você não aparecer. O modelo depende disso.
-      Aqui o modelo é o contrário: o espaço só funciona se você vier, treinar certo e ter resultado.
-    </p>
+    <div class="split">
+      <div>
+        <div class="eyebrow">A diferença</div>
+        <h2 style="font-size:clamp(27px,4vw,38px)">
+          A gente não é uma academia pequena. A gente é o oposto de uma academia.
+        </h2>
+        <p class="lead" style="margin-top:16px">
+          Academia grande vende plano e torce pra você não aparecer. O modelo depende disso.
+          Aqui o modelo é o contrário: o espaço só funciona se você vier, treinar certo e ter resultado.
+        </p>
+        <p class="lead" style="margin-top:14px">
+          Por isso tem alguém do seu lado corrigindo o movimento — não um instrutor que passa
+          de meia em meia hora perguntando se está tudo bem.
+        </p>
+      </div>
+      <img src="img/correcao.jpg" alt="Personal trainer corrigindo a execução de uma aluna de perto" class="foto" width="800" height="1000" loading="lazy">
+    </div>
 
-    <div class="cmp">
+    <div class="cmp" style="margin-top:52px">
       <div class="cmp-row cmp-head">
         <div>Academia comum</div>
         <div>Personal Station</div>
@@ -360,11 +368,20 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 <!-- ================= PRA QUEM ================= -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">Pra quem é</div>
-    <h2 style="font-size:clamp(26px,3.6vw,36px);max-width:18em">
-      Quem chega aqui geralmente já tentou academia comum &mdash; e não deu certo.
-    </h2>
-    <div class="cards">
+    <div class="split">
+      <img src="img/mobilidade.jpg" alt="Personal trainer fazendo alongamento assistido com aluna" class="foto" width="800" height="1000" loading="lazy">
+      <div>
+        <div class="eyebrow">Pra quem é</div>
+        <h2 style="font-size:clamp(26px,3.6vw,36px)">
+          Quem chega aqui geralmente já tentou academia comum &mdash; e não deu certo.
+        </h2>
+        <p class="lead" style="margin-top:16px">
+          Não por falta de vontade. Por falta de alguém olhando: treino errado não traz
+          resultado, resultado que não vem desanima, e aí a matrícula vira boleto.
+        </p>
+      </div>
+    </div>
+    <div class="cards" style="margin-top:52px">
       <div class="card">
         <div class="ic">🎯</div>
         <h3>Quem tem um objetivo específico</h3>
