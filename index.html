@@ -255,7 +255,7 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
       </div>
       <div class="hero-trust">
         <span>✓ Aula experimental sem compromisso</span>
-        <span>✓ Rua Joaquim Nabuco, 841</span>
+        <span>✓ Joaquim Nabuco, 841 — fundos do Conexão Pilates</span>
       </div>
     </div>
     <img src="img/hero.jpg" alt="Personal trainer supervisionando aluna no leg press na Personal Station, com o salão vazio ao redor" class="foto" width="1000" height="1250" fetchpriority="high">
@@ -446,6 +446,9 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
           <div>
             <h3>Onde fica</h3>
             <p>Rua Joaquim Nabuco, 841 &mdash; Maringá, PR</p>
+            <p style="color:var(--accent);font-weight:600;margin-top:4px">
+              Entrada pelos fundos do Conexão Pilates.
+            </p>
             <a href="https://www.google.com/maps/search/?api=1&query=Rua+Joaquim+Nabuco+841+Maringa+PR" target="_blank" rel="noopener">Abrir no Google Maps →</a>
           </div>
         </div>
@@ -551,6 +554,15 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
       <summary>Tem vaga no meu horário?</summary>
       <p>Entre 9h e 17h30 quase sempre tem. Cedo (06h–09h) e no fim de tarde (17h30–20h) as vagas são mais disputadas — se seu horário é esse, chama logo pra gente ver o que ainda está aberto.</p>
     </details>
+    <details>
+      <summary>Como chego aí? Não estou achando a academia.</summary>
+      <p>
+        Você chegou no lugar certo: o endereço é o mesmo do <strong>Conexão Pilates</strong>
+        (Rua Joaquim Nabuco, 841). A Personal Station fica <strong>nos fundos</strong> —
+        é só entrar e seguir até o final. Se ficar em dúvida na hora, chama no WhatsApp
+        que a gente te orienta.
+      </p>
+    </details>
   </div>
 </section>
 
@@ -627,7 +639,8 @@ document.getElementById('form').addEventListener('submit', e => {
     `*Nome:* ${nome}\n` +
     `*WhatsApp:* ${fone}\n` +
     `*Objetivo:* ${objetivo}\n` +
-    `*Melhor horário:* ${horario}`;
+    `*Melhor horário:* ${horario}\n\n` +
+    `_(Vim pelo site — sei que fica nos fundos do Conexão Pilates)_`;
 
   window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
 });
